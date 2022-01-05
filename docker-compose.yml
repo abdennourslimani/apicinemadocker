@@ -1,0 +1,29 @@
+    version: '3.8'
+
+    services:
+        app:
+            build: .
+            container_name: cinema-api
+            ports:
+              - 80:80
+            networks:
+              - apicinema
+            depends_on:
+              -  apicinema-db
+
+
+        apicinema-db:
+            image: mongo
+            container_name: apicinema-db
+            ports:
+              - 27017:27017
+            networks:
+              - apicinema
+            volumes:
+              - db-apicinema:/data/db
+
+    networks:
+        apicinema:
+
+    volumes:
+        db-apicinema:
