@@ -6,5 +6,7 @@ jobs:
     steps:
       - run: echo "Je fais  mes tests"
       - run: echo "je fais le build"
-      # - name: Je liste mes fichiers
-      # - run: ls
+      - name: Je test sur develop branche mes fichiers
+      - run: je test ma branche develop
+    branches:
+      - develop
