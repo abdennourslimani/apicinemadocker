@@ -3,10 +3,10 @@ on: [push]
 jobs:
   Mon-Premier-Job:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
     steps:
       - run: echo "Je fais  mes tests"
       - run: echo "je fais le build"
       - name: Je test sur develop branche mes fichiers
       - run: je test ma branche develop
-    branches:
-      - develop
+
